@@ -25,7 +25,7 @@ pub fn init_config(config: &mut Config, config_path: &Path) -> Result<(), String
     }
 
     let default_dir = &config.dir;
-    let dir_input = prompt("请输入内核源码目录名（相对于脚本所在目录）", default_dir);
+    let dir_input = prompt("请输入项目源码目录名（相对于脚本所在目录）", default_dir);
     if dir_input == "exit" { return Err("用户取消配置".to_string()); }
     let target_dir = exe_dir.join(&dir_input);
     if !target_dir.exists() {
